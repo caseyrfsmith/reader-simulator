@@ -91,7 +91,7 @@ This will show you potential content containers and recommend a configuration.
 
 ### 2. Add site configuration
 
-Update `config/sites.json` with the recommended configuration:
+Update `config/sites.json` with the recommended configuration. For example:
 
 ```json
 {
@@ -111,7 +111,7 @@ Update `config/sites.json` with the recommended configuration:
 ### 3. Run a test
 
 ```bash
-node cli.js run \
+node src/cli.js run \
   --url https://docs.stripe.com \
   --persona confused-beginner \
   --goal authenticate
@@ -133,8 +133,8 @@ See the `examples/` directory for sample journey files and reports:
 
 **Get help:**
 ```bash
-node cli.js -h              # Show all commands
-node cli.js run -h          # Help for specific command
+node src/cli.js -h              # Show all commands
+node src/cli.js run -h          # Help for specific command
 ```
 
 ### `run`
@@ -142,7 +142,7 @@ node cli.js run -h          # Help for specific command
 Run a documentation test with a specific persona and goal.
 
 ```bash
-node cli.js run \
+node src/cli.js run \
   --url <url> \
   --persona <persona-key> \
   --goal <goal-key> \
@@ -534,7 +534,7 @@ Bad goals:
 - Can struggle with navigation when elements are hidden in React components or require interaction to reveal
   - **Workaround:** Start tests from an appropriate landing page that skips problematic navigation for example:
     ```bash
-    node cli.js run \
+    node src/cli.js run \
       --url https://docs.payabli.com/developers/developer-overview \
       --persona confused-beginner \
       --goal authenticate

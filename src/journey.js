@@ -109,7 +109,7 @@ export async function runJourney({
         break;
       }
 
-      // APPLY PERSONA-SPECIFIC CONTENT STRATEGY
+      // Apply persona-specific content strategy
       let currentContent;
       let usedFullContent = false;
       const strategy = behavior.contentStrategy;
