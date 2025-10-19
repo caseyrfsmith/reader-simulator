@@ -1,4 +1,4 @@
-# Developer Docs Simulated Reader
+# Developer docs simulated reader
 
 This is an experimental tool that simulates different user personas navigating documentation sites to measure success rates, identify navigation issues, and provide actionable insights for documentation teams.
 
@@ -6,7 +6,7 @@ This is an experimental tool that simulates different user personas navigating d
 
 This tool uses AI (Claude via the Anthropic API) to simulate real users trying to accomplish specific goals in documentation. It tracks navigation paths, detects problems, and generates detailed reports on documentation usability issues. Even when tests succeed, it evaluates whether the content format matches the user's learning style.
 
-### Key Features
+### Key features
 
 - **Persona-based testing** - Simulate different user types (beginners, experts, debuggers) with realistic navigation behaviors
 - **Persona-specific content strategies** - Each persona reads and searches content differently:
@@ -21,7 +21,7 @@ This tool uses AI (Claude via the Anthropic API) to simulate real users trying t
 - **Loop detection** - Identifies when users get stuck in circular navigation patterns
 - **Aggregate reporting** - Analyze multiple test runs to identify patterns and prioritize fixes
 
-### Caveats / Check Your Expectations
+### Caveats / Check your expectations
 
 This is an experimental project that I dialed in using Stripe's docs and Payabli's docs. It's optimized for doc sets I deal with, so it's not perfect, but it's a great start. I'm not a developer and this isn't meant to replace actual user testing—it was a fun weekend project. It's being provided as-is and I really can't help you tailor it to your own use cases outside of what's offered in the README. Please don't kill the vibe by yelling at me, okay?
 
@@ -75,11 +75,11 @@ cp .env.example .env
 node cli.js list-personas
 ```
 
-## Quick Start
+## Quick start
 
 The project comes with five personas defined in `personas.json` and `personaBehaviors.js`. You can add or edit personas as needed.
 
-### 1. Inspect a Documentation Site
+### 1. Inspect a documentation site
 
 First, identify the best content selector for a site:
 
@@ -89,7 +89,7 @@ node cli.js inspect --url https://docs.stripe.com
 
 This will show you potential content containers and recommend a configuration.
 
-### 2. Add Site Configuration
+### 2. Add site configuration
 
 Update `config/sites.json` with the recommended configuration:
 
@@ -108,7 +108,7 @@ Update `config/sites.json` with the recommended configuration:
 }
 ```
 
-### 3. Run a Test
+### 3. Run a test
 
 ```bash
 node cli.js run \
@@ -117,11 +117,11 @@ node cli.js run \
   --goal authenticate
 ```
 
-### 4. Review Results
+### 4. Review results
 
 Results are saved to the `journeys/` directory. Successful tests include a `successFeedback` object that evaluates content style fit. Failed tests include a `feedbackReport` with actionable insights.
 
-## Example Output
+## Example output
 
 See the `examples/` directory for sample journey files and reports:
 - `journey-success-perfect.json` - Successful journey with ideal content format
@@ -129,7 +129,7 @@ See the `examples/` directory for sample journey files and reports:
 - `journey-failure-loop.json` - Failed journey with feedback
 - `sample-report.txt` - Aggregate report from multiple tests
 
-## CLI Commands
+## CLI commands
 
 **Get help:**
 ```bash
@@ -199,7 +199,7 @@ Show all available goals.
 node cli.js list-goals
 ```
 
-## Configuration Files
+## Configuration files
 
 ### `config/personas.json`
 
@@ -246,43 +246,43 @@ Configure content extraction for specific sites.
 }
 ```
 
-## How Personas Work
+## How personas work
 
 Each persona has distinct behaviors defined in `personaBehaviors.js` that affect how they navigate and read content:
 
-### Confused Beginner
+### Confused beginner
 - **Link prioritization:** Heavily favors tutorials, guides, "getting started" pages; avoids API references
 - **Content strategy:** Progressive loading - starts with 1500 chars, loads up to 5000 if uncertain
 - **Success criteria:** Looks for step-by-step tutorials, copy-paste examples, plain explanations
 - **Reading style:** Needs full context, doesn't skip content
 
-### Efficient Developer
+### Efficient developer
 - **Link prioritization:** Heavily favors API reference, documentation pages; penalizes guides/tutorials
 - **Content strategy:** Keyword search mode - simulates Ctrl+F by extracting large sections (1000 chars each side) around goal keywords
 - **Success criteria:** Looks for API endpoints, code examples, request/response formats, parameter tables
 - **Reading style:** Loads maximum content (5000 chars) and uses keyword extraction to find relevant sections
 
-### Methodical Learner
+### Methodical learner
 - **Link prioritization:** Doesn't reorder - respects document structure and reads sequentially
 - **Content strategy:** Full-always mode - always loads maximum content (5000 chars)
 - **Success criteria:** Looks for complete explanations, clear prerequisites, comprehensive examples
 - **Reading style:** Reads everything thoroughly, follows documentation in order
 
-### Casual Browser
+### Casual browser
 - **Link prioritization:** Balanced - moderate preferences for guides and API docs
 - **Content strategy:** Progressive loading - starts with 2000 chars, loads up to 4000 if needed
 - **Success criteria:** Accepts either tutorial-style or reference-style content
 - **Reading style:** Moderate keyword search with 400-char context windows
 
-### Desperate Debugger
+### Desperate debugger
 - **Link prioritization:** Heavily favors troubleshooting, error pages, FAQs, "fix" content
 - **Content strategy:** Keyword search mode - extracts sections around error-related keywords with 600-char windows
 - **Success criteria:** Looks for error explanations, troubleshooting steps, quick fixes
 - **Reading style:** Urgently searches for problem-specific content, includes keywords like "error", "fix", "solution"
 
-## Output Format
+## Output format
 
-### Journey Files
+### Journey files
 
 Each test run creates a JSON file with:
 - Persona and goal information
@@ -295,7 +295,7 @@ Each test run creates a JSON file with:
 - Success feedback (for successful tests)
 - Failure feedback (for failed tests)
 
-### Success Feedback
+### Success feedback
 
 When tests succeed, the tool evaluates content style fit:
 
@@ -317,7 +317,7 @@ When tests succeed, the tool evaluates content style fit:
 - `acceptable` - Found the answer but would prefer different format
 - `poor` - Answer is there but format is frustrating for this persona
 
-### Failure Feedback
+### Failure feedback
 
 When tests fail, the tool generates:
 
@@ -332,9 +332,9 @@ When tests fail, the tool generates:
 }
 ```
 
-## How It Works
+## How it works
 
-### Content Extraction
+### Content extraction
 
 The tool uses a multi-strategy approach:
 1. First tries site-specific selectors from `config/sites.json`
@@ -343,22 +343,22 @@ The tool uses a multi-strategy approach:
 4. Filters out navigation and other non-content elements
 5. Extracts page structure (headings) to help Claude understand organization
 
-### Persona-Specific Content Strategies
+### Persona-specific content strategies
 
 Different personas read content differently:
 
-**Progressive Loading** (Confused Beginner, Casual Browser):
+**Progressive loading** (Confused Beginner, Casual Browser):
 - Initially sends a preview (1500-2000 chars)
 - If Claude indicates uncertainty, loads full content (4000-5000 chars)
 - Tracks how often progressive loading is triggered
 
-**Keyword Search** (Efficient Developer, Desperate Debugger):
+**Keyword search** (Efficient Developer, Desperate Debugger):
 - Extracts goal-related keywords
 - Finds large sections around those keywords (600-1000 chars each side)
 - Simulates using Ctrl+F to find relevant content quickly
 - Debuggers add error-related keywords automatically
 
-**Full-Always** (Methodical Learner):
+**Full-always** (Methodical Learner):
 - Always loads maximum content (5000 chars)
 - Reads everything thoroughly
 - No progressive loading
@@ -372,11 +372,11 @@ At each step:
 4. Claude decides: click a link, declare success, or indicate being stuck
 5. Provides reasoning and content style evaluation
 
-### Loop Detection
+### Loop detection
 
 Tracks visited URLs and stops if the same URL is visited 3+ times, indicating the user is stuck in a navigation loop.
 
-### Feedback Generation
+### Feedback generation
 
 **When a test succeeds:**
 - Claude evaluates if content style matches persona preferences
@@ -387,7 +387,7 @@ Tracks visited URLs and stops if the same URL is visited 3+ times, indicating th
 - Asks Claude to analyze what went wrong from the persona's perspective
 - Generates specific, actionable recommendations
 
-## Example Workflow
+## Example workflow
 
 Test docs with multiple personas:
 
@@ -424,7 +424,7 @@ node src/cli.js run \
 node src/cli.js report --dir journeys
 ```
 
-### Sample Output
+### Sample output
 
 ```
 Analyzing 3 journeys...
@@ -460,7 +460,7 @@ Efficiency:
    💥 Impact: Developers can't resolve urgent production issues
 ```
 
-## Token Efficiency
+## Token efficiency
 
 The persona-specific content strategies optimize token usage:
 
@@ -483,7 +483,7 @@ For a 10-step journey:
 - Expert: ~7,500 tokens (~$0.0225)
 - Methodical: ~12,500 tokens (~$0.0375)
 
-## Cost Considerations
+## Cost considerations
 
 Approximate costs per test run (10 steps, using Claude Sonnet 4):
 - Confused Beginner: ~$0.0188
@@ -496,7 +496,7 @@ For testing multiple personas across multiple sites:
 - Single site, 4 personas, 3 goals each: ~$0.35
 - 5 sites, 4 personas, 3 goals each: ~$1.75
 
-## Tips for Writing Personas
+## Tips for writing personas
 
 Good personas have:
 - Clear skill level and background
@@ -510,7 +510,7 @@ Bad personas:
 - No clear preferences
 - Unrealistic behaviors
 
-## Tips for Writing Goals
+## Tips for writing goals
 
 Good goals:
 - Specific and achievable
@@ -540,7 +540,7 @@ Bad goals:
       --goal authenticate
     ```
 
-## Project Structure
+## Project structure
 
 ```
 .
@@ -569,7 +569,7 @@ Bad goals:
 └── .env                       # API keys (not in repo)
 ```
 
-## About This Project
+## About this project
 
 This is a research/demo project exploring AI-assisted documentation testing. It's shared as-is for educational and demonstration purposes.
 
