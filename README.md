@@ -72,7 +72,7 @@ cp .env.example .env
 
 4. Verify installation:
 ```bash
-node cli.js list-personas
+node src/cli.js list-personas
 ```
 
 ## Quick start
@@ -84,7 +84,7 @@ The project comes with five personas defined in `personas.json` and `personaBeha
 First, identify the best content selector for a site:
 
 ```bash
-node cli.js inspect --url https://docs.stripe.com
+node src/cli.js inspect --url https://docs.stripe.com
 ```
 
 This will show you potential content containers and recommend a configuration.
@@ -166,7 +166,7 @@ node src/cli.js run \
 Analyze a documentation site and suggest configuration.
 
 ```bash
-node cli.js inspect --url <url>
+node src/cli.js inspect --url <url>
 ```
 
 ### `report`
@@ -174,7 +174,7 @@ node cli.js inspect --url <url>
 Generate aggregate report from multiple journey files.
 
 ```bash
-node cli.js report --dir <directory>
+node src/cli.js report --dir <directory>
 ```
 
 Outputs:
@@ -188,7 +188,7 @@ Outputs:
 Show all available personas.
 
 ```bash
-node cli.js list-personas
+node src/cli.js list-personas
 ```
 
 ### `list-goals`
@@ -196,7 +196,7 @@ node cli.js list-personas
 Show all available goals.
 
 ```bash
-node cli.js list-goals
+node src/cli.js list-goals
 ```
 
 ## Configuration files
