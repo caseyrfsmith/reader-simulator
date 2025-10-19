@@ -123,11 +123,7 @@ Results are saved to the `journeys/` directory. Successful tests include a `succ
 
 ## Example output
 
-See the `examples/` directory for sample journey files and reports:
-- `journey-success-perfect.json` - Successful journey with ideal content format
-- `journey-success-acceptable.json` - Success but content style could be better
-- `journey-failure-loop.json` - Failed journey with feedback
-- `sample-report.txt` - Aggregate report from multiple tests
+See the `examples/` directory for sample journey files and reports
 
 ## CLI commands
 
