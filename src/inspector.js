@@ -10,7 +10,7 @@ export async function inspectSite(url) {
     await page.waitForTimeout(3000);
     
     const analysis = await page.evaluate(() => {
-      // Find all potential content containers
+      // Find all potential content containers TODO: I think I could do this better, come back to it later.
       const candidates = [
         { selector: 'article#content', element: document.querySelector('article#content') },
         { selector: 'article[id]', element: document.querySelector('article[id]') },

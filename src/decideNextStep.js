@@ -1,5 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { getPersonaBehavior } from './personaBehaviors.js';  // ADD THIS LINE
+import { getPersonaBehavior } from './personaBehaviors.js';
 
 export async function decideNextStep(currentPage, availableLinks, persona, goal, apiKey) {
   const client = new Anthropic({

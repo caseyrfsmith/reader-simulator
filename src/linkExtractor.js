@@ -20,7 +20,7 @@ export async function extractLinks(page, siteConfig, currentUrl) {
         if (a.href && a.innerText.trim()) {
           const linkText = a.innerText.trim().toLowerCase();
           
-          // Skip footer-type links
+          // Skip footer-type links TODO: Maybe just make it ignore anything contained in footer element? This works for the sites I tested with but could probably be made more universal TBH
           if (
             linkText.includes('built with') ||
             linkText.includes('powered by') ||
@@ -49,7 +49,7 @@ export async function extractLinks(page, siteConfig, currentUrl) {
         if (!processedHrefs.has(a.href) && a.innerText.trim()) {
           const linkText = a.innerText.trim().toLowerCase();
           
-          // Skip footer-type links and very short links
+          // Skip footer-type links and very short links TODO: think about refatoring to ignore all FOOTER content to make more universal
           if (
             linkText.includes('built with') ||
             linkText.includes('powered by') ||
@@ -101,7 +101,7 @@ export async function extractLinks(page, siteConfig, currentUrl) {
       }
     });
     
-    return uniqueLinks.slice(0, 20); // Reduced from 30
+    return uniqueLinks.slice(0, 20);
   }, additionalExcludes);
 
   return links;

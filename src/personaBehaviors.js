@@ -110,7 +110,7 @@ export const personaBehaviors = {
           if (text.includes(keyword)) score += 25;
         });
         
-        // PENALTY for reference docs
+        // PENALTY for reference docs because confused beginners need context, not references
         if (text.includes('reference') && !text.includes('guide')) score -= 20;
         if (text.includes('api') && !text.includes('guide') && !text.includes('tutorial')) score -= 15;
         
@@ -229,6 +229,7 @@ export const personaBehaviors = {
     }
   },
   
+  // TODO: IDK if this is a useful persona or not since debugging behavior is heavily search-based. come back to this.
   'desperate-debugger': {
     selectLink(links, goal) {
       const scored = links.map(link => {
