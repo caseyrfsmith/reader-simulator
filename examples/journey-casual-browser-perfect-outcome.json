@@ -1,0 +1,301 @@
+{
+  "persona": "Casual Browser",
+  "personaKey": "casual-browser",
+  "goal": "Figure out how to authenticate API requests",
+  "startUrl": "https://docs.payabli.com/developers/developer-overview",
+  "siteConfig": {
+    "name": "Payabli Docs",
+    "contentSelector": "main",
+    "excludeLinks": []
+  },
+  "steps": [
+    {
+      "stepNumber": 1,
+      "page": {
+        "title": "Resources for developers | Payabli",
+        "headings": [
+          "Resources for developers"
+        ],
+        "contentPreview": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nDevelopers\nGetting started\nChangelog\nReferences\nOverview\nKey references\nPay In references\nPay Out references\nPay Ops references\nResources for developers\nCopy page\nLearn about Payabli's developer documentation and tools\n\nWelcome to the Payabli developer documentation! These docs are designed to help you integrate with Payabli’s APIs and services, providing you with the tools and resources you need to build and maintain your payment solutions.\n\nGet started\nLearn where to start with your Payabli integration\nTest cards and accounts\nUse our test cards and accounts to simulate transactions and test your integration\nAPI reference\nFind detailed API documentation that covers all aspects of the Payabli platform\nChangelog\nStay up-to-date with the latest API changes\nIntegration guides\nRead step-by-step guides for integrating with Payabli’s APIs\nEmbedded components\nLearn how to use Payabli’s embedded components for low-cod",
+        "fullContent": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nDevelopers\nGetting started\nChangelog\nReferences\nOverview\nKey references\nPay In references\nPay Out references\nPay Ops references\nResources for developers\nCopy page\nLearn about Payabli's developer documentation and tools\n\nWelcome to the Payabli developer documentation! These docs are designed to help you integrate with Payabli’s APIs and services, providing you with the tools and resources you need to build and maintain your payment solutions.\n\nGet started\nLearn where to start with your Payabli integration\nTest cards and accounts\nUse our test cards and accounts to simulate transactions and test your integration\nAPI reference\nFind detailed API documentation that covers all aspects of the Payabli platform\nChangelog\nStay up-to-date with the latest API changes\nIntegration guides\nRead step-by-step guides for integrating with Payabli’s APIs\nEmbedded components\nLearn how to use Payabli’s embedded components for low-code payments integration\nSDKs and tools\nAccess SDKs, libraries, and tools to simplify your development process\nReferences\nLook up glossary terms, response codes, errors, and statuses\nWas this page helpful?\nYes\nNo\nBuilt with",
+        "totalLength": 1221,
+        "url": "https://docs.payabli.com/developers/developer-overview",
+        "contentSource": "main (config)",
+        "usingConfig": true,
+        "content": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nDevelopers\nGetting started\nChangelog\nReferences\nOverview\nKey references\nPay In references\nPay Out references\nPay Ops references\nResources for developers\nCopy page\nLearn about Payabli's developer documentation and tools\n\nWelcome to the Payabli developer documentation! These docs are designed to help you integrate with Payabli’s APIs and services, providing you with the tools and resources you need to build and maintain your payment solutions.\n\nGet started\nLearn where to start with your Payabli integration\nTest cards and accounts\nUse our test cards and accounts to simulate transactions and test your integration\nAPI reference\nFind detailed API documentation that covers all aspects of the Payabli platform\nChangelog\nStay up-to-date with the latest API changes\nIntegration guides\nRead step-by-step guides for integrating with Payabli’s APIs\nEmbedded components\nLearn how to use Payabli’s embedded components for low-cod",
+        "usedFullContent": false
+      },
+      "availableLinks": 9,
+      "decision": {
+        "reasoning": "This page is just an overview that mentions API reference exists but doesn't contain any actual authentication details, code examples, or technical information about API requests. I need to click on 'API reference' to find the detailed documentation.",
+        "action": "click",
+        "linkIndex": 1,
+        "confidence": "high"
+      }
+    },
+    {
+      "stepNumber": 2,
+      "page": {
+        "title": "API overview | Payabli",
+        "headings": [
+          "API overview",
+          "Authentication",
+          "Create and manage API tokens",
+          "API token types",
+          "Environments",
+          "Sandbox",
+          "Production",
+          "Rate limits",
+          "Request limits",
+          "Fraud controls",
+          "Request timeouts",
+          "Preventing duplicate requests",
+          "409 conflict",
+          "Use webhooks to avoid duplicate transactions",
+          "Entrypoint vs entry",
+          "API responseCode and resultCode Reference"
+        ],
+        "contentPreview": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nAuthentication\nCreate and manage API tokens\nAPI token types\nEnvironments\nSandbox\nProduction\nRate limits\nRequest limits\nFraud controls\nRequest timeouts\nPreventing duplicate requests\n409 conflict\nUse webhooks to avoid duplicate transactions\nEntrypoint vs entry\nUsing the API\nAPI overview\nCopy page\nGet started with the Payabli API\n\nWelcome to the Payabli API reference. Here you’ll find all the information you need for using the Payabli APIs.\n\nAuthentication\n\nThe Payabli API uses secure API tokens to authenticate requests. This guide explains how to authenticate, the different API tokens you may use, and how to create and manage basic API tokens.\n\nNote that API tokens are different than payment method tokens. API tokens are used for authentication, and paym",
+        "fullContent": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nAuthentication\nCreate and manage API tokens\nAPI token types\nEnvironments\nSandbox\nProduction\nRate limits\nRequest limits\nFraud controls\nRequest timeouts\nPreventing duplicate requests\n409 conflict\nUse webhooks to avoid duplicate transactions\nEntrypoint vs entry\nUsing the API\nAPI overview\nCopy page\nGet started with the Payabli API\n\nWelcome to the Payabli API reference. Here you’ll find all the information you need for using the Payabli APIs.\n\nAuthentication\n\nThe Payabli API uses secure API tokens to authenticate requests. This guide explains how to authenticate, the different API tokens you may use, and how to create and manage basic API tokens.\n\nNote that API tokens are different than payment method tokens. API tokens are used for authentication, and payment method tokenization exchange sensitive payment method information for secure tokens.\n\nYour API tokens carry privileges, so be sure to keep them secure! Don’t share your private API tokens in public areas such as GitHub, client-side code, or public domains.\n\nWhen you authenticate to the API, send the API token in the request header with the key requestToken.\n\nExample header\n$\t  curl --request POST \\\n>\t      --url 'https://api-sandbox.payabli.com/api/Endpoint'\\\n>\t      --header 'accept: application/json' \\\n>\t      --header 'content-type: application/*+json' \\\n>\t      --header 'requestToken: <API token>'\n\nYou must make all API requests over HTTPS. API requests without authentication will fail.\n\nCreate and manage API tokens\n\nYou can create and manage your own API tokens in PartnerHub.\n\nNavigate to Developers > API Tokens, then click Create API Token.\nIn the modal, configure your API token. See the configuration options table below.\nWhen finished, save your work.\nConfiguration option\tDescription\nToken Mode\tPublic tokens are for embedded components, including Creator components. Private tokens are for Payabli APIs and payment devices.\nToken Type\tThe organization API token type is the most commonly used, and gives partners and paypoints access to most endpoints. The application API token is more advanced, and is used for authentication and managing entities. You rarely need to use an application API token. See the API Token Types section for more information.\nToken Lifetime\tAPI tokens can have a lifetime of between 1 and 24 months. Remember that you can delete unused or compromised API tokens at any time from the dashboard.\nIP Restrictions\tUse this option to create an allowlist of IP addresses that can make requests with this API token. Leaving this option blank allows all IP addresses to make requests with this API token.\nCreator Token?\tSelect Yes to use this API token with Creator components. The API token type must be Public. Creator API tokens require that you configure domain restrictions.\nDomain Restrictions\tOnly available with Creator API tokens. For security, you must add the domains that you embed Creator components on. For example, if they’re embedded on https://app.myproduct.com, then add https://app.myproduct here.\nDescription\tA descriptive name for the API token. This description appears in the dashboard and helps identify the API token.\n\nTo view or delete API tokens, navigate to Developers > API Tokens, then click the Action column of a token you want to manage.\n\nAPI token types\n\nTo enhance security, Payabli has several different types of API token, each with different scopes and lifetime.\n\nOrganization API token (most common)\nApplication API token\nUser API token\nTemporary API token\nEnvironments\n\nPayabli offers two environments: a sandbox environment for development and a production environment to bring your Payabli integration live.\n\nSandbox\n\nUse the sandbox environment to build your payments integration without having to charge actual payments and settle bank accounts. Test and run unlimited transactions and play around with Payabli’s tools to build your application.\n\nPayabli Client Success and Development Support give you your sandbox API token after your integration kickoff call.\n\nSandbox API URL: https://api-sandbox.payabli.com/api\n\nProduction\n\nUse the production environment to go live with your integration. Transactions in this environment charge payors and create actual settlements into bank accounts. This environment also lets you create bills and send them for actual payment.\n\nMake sure you have completed extensive testing before launching. Reach out to the Payabli team to make sure you’re ready to launch.\n\nProduction API URL: https://api.payabli.com/api\n\nRate limits\n\nFor security and fraud prevention, Payabli applies two different kinds of rate limits: request limits, and transaction limits (also known as fraud controls).\n\nPayabli reserves the right to alter rate limits in case of security concerns, and wi",
+        "totalLength": 9486,
+        "url": "https://docs.payabli.com/developers/api-reference/api-overview",
+        "contentSource": "main (config)",
+        "usingConfig": true,
+        "content": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nAuthentication\nCreate and manage API tokens\nAPI token types\nEnvironments\nSandbox\nProduction\nRate limits\nRequest limits\nFraud controls\nRequest timeouts\nPreventing duplicate requests\n409 conflict\nUse webhooks to avoid duplicate transactions\nEntrypoint vs entry\nUsing the API\nAPI overview\nCopy page\nGet started with the Payabli API\n\nWelcome to the Payabli API reference. Here you’ll find all the information you need for using the Payabli APIs.\n\nAuthentication\n\nThe Payabli API uses secure API tokens to authenticate requests. This guide explains how to authenticate, the different API tokens you may use, and how to create and manage basic API tokens.\n\nNote that API tokens are different than payment method tokens. API tokens are used for authentication, and paym",
+        "usedFullContent": false
+      },
+      "availableLinks": 7,
+      "decision": {
+        "reasoning": "The current page mentions authentication and states 'The Payabli API uses secure API tokens to authenticate requests' and promises to explain 'how to authenticate', but it cuts off mid-sentence and doesn't provide actual implementation details, code examples, or specific steps for authentication.",
+        "action": "click",
+        "linkIndex": 1,
+        "confidence": "medium"
+      }
+    },
+    {
+      "stepNumber": 3,
+      "page": {
+        "title": "API responseCode and resultCode Reference | Payabli",
+        "headings": [
+          "API responseCode and resultCode Reference",
+          "General codes",
+          "3000 codes",
+          "3200 codes",
+          "3400 codes",
+          "3500 codes",
+          "3600 codes",
+          "3700 codes",
+          "3900 codes",
+          "4000 codes",
+          "5000 codes",
+          "6000 codes",
+          "7000 codes",
+          "8000 codes",
+          "9000 codes",
+          "Make transaction"
+        ],
+        "contentPreview": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nGeneral codes\n3000 codes\n3200 codes\n3400 codes\n3500 codes\n3600 codes\n3700 codes\n3900 codes\n4000 codes\n5000 codes\n6000 codes\n7000 codes\n8000 codes\n9000 codes\nUsing the API\nAPI responseCode and resultCode Reference\nCopy page\nLearn about responseCode and resultCode values returned by the API\n\nWhen you make an API request, a responseCode or resultCode is returned in the response, depending on the endpoint. These codes can tell you whether the action was successful, and if not, can help you troubleshoot what went wrong with your request.\n\nThese codes don’t cover payment errors and return codes. See Payment Return Codes and Errors for codes relating to payments.\nGeneral codes\nResultCode\tName\tDescription\tSolution\n1\tRequest successful\tThe API request executed ",
+        "fullContent": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nGeneral codes\n3000 codes\n3200 codes\n3400 codes\n3500 codes\n3600 codes\n3700 codes\n3900 codes\n4000 codes\n5000 codes\n6000 codes\n7000 codes\n8000 codes\n9000 codes\nUsing the API\nAPI responseCode and resultCode Reference\nCopy page\nLearn about responseCode and resultCode values returned by the API\n\nWhen you make an API request, a responseCode or resultCode is returned in the response, depending on the endpoint. These codes can tell you whether the action was successful, and if not, can help you troubleshoot what went wrong with your request.\n\nThese codes don’t cover payment errors and return codes. See Payment Return Codes and Errors for codes relating to payments.\nGeneral codes\nResultCode\tName\tDescription\tSolution\n1\tRequest successful\tThe API request executed without errors\tThere’s nothing to do.\n2\tRequest failed\tThe API request failed due to a processor decline\tCheck the response for the failure reason.\n3\tRequest failed\tThe API request failed due to a technical error\tCheck the response for the failure reason.\n10\tRequest initiated\tAn asynchronous process has started successfully.\tThere’s nothing to do.\n3000 codes\nResponseCode\tName\tDescription\tSolution\n3001\tInvalid entrypoint name\tEntrypoint specified in parameter doesn’t exist\tCorrect the parameter and try again.\n3002\tInvalid Amount\tAmount value is empty or negative\tProvide a valid amount.\n3003\tInvalid parameter value in request\tThe value in parameter is incorrect\tProvide the correct value for parameter.\n3004\tInvalid TimeZone value\tThe timezone value is invalid\tProvide a value between -12 and +12.\n3005\tInvalid paypoint ID\tThe paypoint ID value is invalid\tProvide a valid paypoint ID value.\n3006\tInvalid user status\tThe value provided is invalid\tProvide a valid status value for user (either 0, 1, or 85).\n3007\tThe transaction cannot be refunded\tWe can’t refund this transaction because it already has an associated chargeback or return.\tThere’s no solution for this, transactions with an associated chargeback or ACH return can’t be refunded. See Chargebacks and Returns Overview for more information.\n3012\tInvalid Amount\tAmount value is greater than available amount for action\tProvide a valid amount.\n3013\tInvalid Amount\tAmount value is different to amount in invoices\tProvide a valid amount.\n3014\tInvalid Amount\tAmount value is not as same as the authorized amount\tPlease make sure that the amount in the request matches the authorized amount\n3015\tInvalid Total Amount\tTotal Amount value is zero\tPlease make sure that the total amount in the request is greater than zero\n3016\tInvalid Total Amount\tTotal Amount value is less than the allowed value\tPlease make sure that the total amount in the request is greater than 85% of the authorized amount\n3200 codes\nResponseCode\tName\tDescription\tSolution\n3201\tEmpty scope array for user\tThe scope specified for user is empty\tProvide a valid scope for user.\n3202\tEmpty access array for user\tThe access specified for user is empty\tProvide a valid access array for user.\n3203\tEmpty email address for user\tThe email specified for user is empty\tProvide a valid email address for user.\n3204\tDuplicated email address\tA user with this email address exists already\tProvide a valid email address that isn’t used in Payabli yet.\n3205\tInvalid scope declared by requestToken\tThe scope provided is outside of the scope of the used API token in the request\tReview the scope provided in request. The platform rules don’t allow scopes not included in the parent API token.\n3206\tInvalid access declared by requestToken\tThe access provided is outside of the access authorized of the API token used in the request\tReview the access provided in request. The platform rules don’t allow access not included in the parent API token.\n3207\tInvalid email address\tThe email address is invalid\tReview the value of the email address provided in request. The email address need to follow the format specified in RFC 881.\n3208\tInvalid phone number\tThe phone number is invalid\tReview the value of the phone number provided in request. The phone number need to satisfy the regular expression &quot;^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$&quot;Examples: - +1(786)111-2222 - 234.222.1234 - 111 222 2345 - 555-444-1111\n3209\tInvalid country code\tThe country code is invalid\tReview the value of the country code provided in the request. The country code must be in ISO-3166-1-Alpha 2 format. Refer to the ISO reference for help.\n3210\tInvalid mail country code\tThe mail country code is invalid\tReview the value of the mail country code provided in the request. The country code must be in ISO-3166-1-Alpha 2 format. Refer to the ISO reference for help.\n3211\tInvalid start date\tThe start date value is invalid\tProvide the value in one of accepted formats: YYYY-MM-DD or MM",
+        "totalLength": 35900,
+        "url": "https://docs.payabli.com/developers/api-reference/api-responses",
+        "contentSource": "main (config)",
+        "usingConfig": true,
+        "content": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nGeneral codes\n3000 codes\n3200 codes\n3400 codes\n3500 codes\n3600 codes\n3700 codes\n3900 codes\n4000 codes\n5000 codes\n6000 codes\n7000 codes\n8000 codes\n9000 codes\nUsing the API\nAPI responseCode and resultCode Reference\nCopy page\nLearn about responseCode and resultCode values returned by the API\n\nWhen you make an API request, a responseCode or resultCode is returned in the response, depending on the endpoint. These codes can tell you whether the action was successful, and if not, can help you troubleshoot what went wrong with your request.\n\nThese codes don’t cover payment errors and return codes. See Payment Return Codes and Errors for codes relating to payments.\nGeneral codes\nResultCode\tName\tDescription\tSolution\n1\tRequest successful\tThe API request executed ",
+        "usedFullContent": false
+      },
+      "availableLinks": 10,
+      "decision": {
+        "reasoning": "This page is about API response codes and error handling, but doesn't contain any information about authentication methods, headers, or how to authenticate API requests. I need to look elsewhere for authentication documentation.",
+        "action": "click",
+        "linkIndex": 1,
+        "confidence": "high"
+      }
+    },
+    {
+      "stepNumber": 4,
+      "page": {
+        "title": "Integration guides | Payabli",
+        "headings": [
+          "Integration guides"
+        ],
+        "contentPreview": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nIntegration guides\nTesting guide\nPay In\nPay In overview\nManage customers\nTransactions\nSubscriptions & autopays\nTokenization\nWallets\nCloud devices\nHosted payment pages\nInvoices & payment links\nRouting funds\nPay Out\nPay Out overview\nManage vendors\nPayouts\nManage bills\nPay Ops\nPay Ops overview\nBoarding\nNotifications\nReporting\nOther Pay Ops guides\nIntegration guides\nCopy page\n\nUse these developer-focused guides to build your integration with Payabli’s APIs\n\nThese integration guides are designed to help you build your integration with Payabli’s APIs. They cover the most common use cases and provide step-by-step instructions, code snippets, and best practices. Click a tile to browse related guides.\n\nPay In\n\nSee the guides for all Pay In features, also known as money in\n\nPay Out\n\nSee the guides for all Pay Out features, also known as money out\n\nPay Ops\n\nSee all the guides for managing your payment operations\n\nWas thi",
+        "fullContent": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nIntegration guides\nTesting guide\nPay In\nPay In overview\nManage customers\nTransactions\nSubscriptions & autopays\nTokenization\nWallets\nCloud devices\nHosted payment pages\nInvoices & payment links\nRouting funds\nPay Out\nPay Out overview\nManage vendors\nPayouts\nManage bills\nPay Ops\nPay Ops overview\nBoarding\nNotifications\nReporting\nOther Pay Ops guides\nIntegration guides\nCopy page\n\nUse these developer-focused guides to build your integration with Payabli’s APIs\n\nThese integration guides are designed to help you build your integration with Payabli’s APIs. They cover the most common use cases and provide step-by-step instructions, code snippets, and best practices. Click a tile to browse related guides.\n\nPay In\n\nSee the guides for all Pay In features, also known as money in\n\nPay Out\n\nSee the guides for all Pay Out features, also known as money out\n\nPay Ops\n\nSee all the guides for managing your payment operations\n\nWas this page helpful?\nYes\nNo\nBuilt with",
+        "totalLength": 1033,
+        "url": "https://docs.payabli.com/developers/developer-guides/integration-guides-home",
+        "contentSource": "main (config)",
+        "usingConfig": true,
+        "content": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nIntegration guides\nTesting guide\nPay In\nPay In overview\nManage customers\nTransactions\nSubscriptions & autopays\nTokenization\nWallets\nCloud devices\nHosted payment pages\nInvoices & payment links\nRouting funds\nPay Out\nPay Out overview\nManage vendors\nPayouts\nManage bills\nPay Ops\nPay Ops overview\nBoarding\nNotifications\nReporting\nOther Pay Ops guides\nIntegration guides\nCopy page\n\nUse these developer-focused guides to build your integration with Payabli’s APIs\n\nThese integration guides are designed to help you build your integration with Payabli’s APIs. They cover the most common use cases and provide step-by-step instructions, code snippets, and best practices. Click a tile to browse related guides.\n\nPay In\n\nSee the guides for all Pay In features, also known as money in\n\nPay Out\n\nSee the guides for all Pay Out features, also known as money out\n\nPay Ops\n\nSee all the guides for managing your payment operations\n\nWas thi",
+        "usedFullContent": false
+      },
+      "availableLinks": 16,
+      "decision": {
+        "reasoning": "This page is just an overview/index of integration guides without any specific authentication details. The API reference section would be the most logical place to find authentication information for API requests.",
+        "action": "click",
+        "linkIndex": 1,
+        "confidence": "high"
+      }
+    },
+    {
+      "stepNumber": 5,
+      "page": {
+        "title": "API overview | Payabli",
+        "headings": [
+          "API overview",
+          "Authentication",
+          "Create and manage API tokens",
+          "API token types",
+          "Environments",
+          "Sandbox",
+          "Production",
+          "Rate limits",
+          "Request limits",
+          "Fraud controls",
+          "Request timeouts",
+          "Preventing duplicate requests",
+          "409 conflict",
+          "Use webhooks to avoid duplicate transactions",
+          "Entrypoint vs entry",
+          "API responseCode and resultCode Reference"
+        ],
+        "contentPreview": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nAuthentication\nCreate and manage API tokens\nAPI token types\nEnvironments\nSandbox\nProduction\nRate limits\nRequest limits\nFraud controls\nRequest timeouts\nPreventing duplicate requests\n409 conflict\nUse webhooks to avoid duplicate transactions\nEntrypoint vs entry\nUsing the API\nAPI overview\nCopy page\nGet started with the Payabli API\n\nWelcome to the Payabli API reference. Here you’ll find all the information you need for using the Payabli APIs.\n\nAuthentication\n\nThe Payabli API uses secure API tokens to authenticate requests. This guide explains how to authenticate, the different API tokens you may use, and how to create and manage basic API tokens.\n\nNote that API tokens are different than payment method tokens. API tokens are used for authentication, and paym",
+        "fullContent": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nAuthentication\nCreate and manage API tokens\nAPI token types\nEnvironments\nSandbox\nProduction\nRate limits\nRequest limits\nFraud controls\nRequest timeouts\nPreventing duplicate requests\n409 conflict\nUse webhooks to avoid duplicate transactions\nEntrypoint vs entry\nUsing the API\nAPI overview\nCopy page\nGet started with the Payabli API\n\nWelcome to the Payabli API reference. Here you’ll find all the information you need for using the Payabli APIs.\n\nAuthentication\n\nThe Payabli API uses secure API tokens to authenticate requests. This guide explains how to authenticate, the different API tokens you may use, and how to create and manage basic API tokens.\n\nNote that API tokens are different than payment method tokens. API tokens are used for authentication, and payment method tokenization exchange sensitive payment method information for secure tokens.\n\nYour API tokens carry privileges, so be sure to keep them secure! Don’t share your private API tokens in public areas such as GitHub, client-side code, or public domains.\n\nWhen you authenticate to the API, send the API token in the request header with the key requestToken.\n\nExample header\n$\t  curl --request POST \\\n>\t      --url 'https://api-sandbox.payabli.com/api/Endpoint'\\\n>\t      --header 'accept: application/json' \\\n>\t      --header 'content-type: application/*+json' \\\n>\t      --header 'requestToken: <API token>'\n\nYou must make all API requests over HTTPS. API requests without authentication will fail.\n\nCreate and manage API tokens\n\nYou can create and manage your own API tokens in PartnerHub.\n\nNavigate to Developers > API Tokens, then click Create API Token.\nIn the modal, configure your API token. See the configuration options table below.\nWhen finished, save your work.\nConfiguration option\tDescription\nToken Mode\tPublic tokens are for embedded components, including Creator components. Private tokens are for Payabli APIs and payment devices.\nToken Type\tThe organization API token type is the most commonly used, and gives partners and paypoints access to most endpoints. The application API token is more advanced, and is used for authentication and managing entities. You rarely need to use an application API token. See the API Token Types section for more information.\nToken Lifetime\tAPI tokens can have a lifetime of between 1 and 24 months. Remember that you can delete unused or compromised API tokens at any time from the dashboard.\nIP Restrictions\tUse this option to create an allowlist of IP addresses that can make requests with this API token. Leaving this option blank allows all IP addresses to make requests with this API token.\nCreator Token?\tSelect Yes to use this API token with Creator components. The API token type must be Public. Creator API tokens require that you configure domain restrictions.\nDomain Restrictions\tOnly available with Creator API tokens. For security, you must add the domains that you embed Creator components on. For example, if they’re embedded on https://app.myproduct.com, then add https://app.myproduct here.\nDescription\tA descriptive name for the API token. This description appears in the dashboard and helps identify the API token.\n\nTo view or delete API tokens, navigate to Developers > API Tokens, then click the Action column of a token you want to manage.\n\nAPI token types\n\nTo enhance security, Payabli has several different types of API token, each with different scopes and lifetime.\n\nOrganization API token (most common)\nApplication API token\nUser API token\nTemporary API token\nEnvironments\n\nPayabli offers two environments: a sandbox environment for development and a production environment to bring your Payabli integration live.\n\nSandbox\n\nUse the sandbox environment to build your payments integration without having to charge actual payments and settle bank accounts. Test and run unlimited transactions and play around with Payabli’s tools to build your application.\n\nPayabli Client Success and Development Support give you your sandbox API token after your integration kickoff call.\n\nSandbox API URL: https://api-sandbox.payabli.com/api\n\nProduction\n\nUse the production environment to go live with your integration. Transactions in this environment charge payors and create actual settlements into bank accounts. This environment also lets you create bills and send them for actual payment.\n\nMake sure you have completed extensive testing before launching. Reach out to the Payabli team to make sure you’re ready to launch.\n\nProduction API URL: https://api.payabli.com/api\n\nRate limits\n\nFor security and fraud prevention, Payabli applies two different kinds of rate limits: request limits, and transaction limits (also known as fraud controls).\n\nPayabli reserves the right to alter rate limits in case of security concerns, and wi",
+        "totalLength": 9486,
+        "url": "https://docs.payabli.com/developers/api-reference/api-overview",
+        "contentSource": "main (config)",
+        "usingConfig": true,
+        "content": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nAuthentication\nCreate and manage API tokens\nAPI token types\nEnvironments\nSandbox\nProduction\nRate limits\nRequest limits\nFraud controls\nRequest timeouts\nPreventing duplicate requests\n409 conflict\nUse webhooks to avoid duplicate transactions\nEntrypoint vs entry\nUsing the API\nAPI overview\nCopy page\nGet started with the Payabli API\n\nWelcome to the Payabli API reference. Here you’ll find all the information you need for using the Payabli APIs.\n\nAuthentication\n\nThe Payabli API uses secure API tokens to authenticate requests. This guide explains how to authenticate, the different API tokens you may use, and how to create and manage basic API tokens.\n\nNote that API tokens are different than payment method tokens. API tokens are used for authentication, and paym",
+        "usedFullContent": false
+      },
+      "availableLinks": 7,
+      "decision": {
+        "reasoning": "The page mentions authentication and states 'The Payabli API uses secure API tokens to authenticate requests. This guide explains how to authenticate, the different API tokens you may use, and how to create and manage basic API tokens.' However, it cuts off mid-sentence and doesn't provide the actual implementation details, code examples, or step-by-step instructions for how to authenticate API requests.",
+        "action": "click",
+        "linkIndex": 1,
+        "confidence": "medium"
+      }
+    },
+    {
+      "stepNumber": 6,
+      "page": {
+        "title": "API responseCode and resultCode Reference | Payabli",
+        "headings": [
+          "API responseCode and resultCode Reference",
+          "General codes",
+          "3000 codes",
+          "3200 codes",
+          "3400 codes",
+          "3500 codes",
+          "3600 codes",
+          "3700 codes",
+          "3900 codes",
+          "4000 codes",
+          "5000 codes",
+          "6000 codes",
+          "7000 codes",
+          "8000 codes",
+          "9000 codes",
+          "Make transaction"
+        ],
+        "contentPreview": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nGeneral codes\n3000 codes\n3200 codes\n3400 codes\n3500 codes\n3600 codes\n3700 codes\n3900 codes\n4000 codes\n5000 codes\n6000 codes\n7000 codes\n8000 codes\n9000 codes\nUsing the API\nAPI responseCode and resultCode Reference\nCopy page\nLearn about responseCode and resultCode values returned by the API\n\nWhen you make an API request, a responseCode or resultCode is returned in the response, depending on the endpoint. These codes can tell you whether the action was successful, and if not, can help you troubleshoot what went wrong with your request.\n\nThese codes don’t cover payment errors and return codes. See Payment Return Codes and Errors for codes relating to payments.\nGeneral codes\nResultCode\tName\tDescription\tSolution\n1\tRequest successful\tThe API request executed ",
+        "fullContent": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nGeneral codes\n3000 codes\n3200 codes\n3400 codes\n3500 codes\n3600 codes\n3700 codes\n3900 codes\n4000 codes\n5000 codes\n6000 codes\n7000 codes\n8000 codes\n9000 codes\nUsing the API\nAPI responseCode and resultCode Reference\nCopy page\nLearn about responseCode and resultCode values returned by the API\n\nWhen you make an API request, a responseCode or resultCode is returned in the response, depending on the endpoint. These codes can tell you whether the action was successful, and if not, can help you troubleshoot what went wrong with your request.\n\nThese codes don’t cover payment errors and return codes. See Payment Return Codes and Errors for codes relating to payments.\nGeneral codes\nResultCode\tName\tDescription\tSolution\n1\tRequest successful\tThe API request executed without errors\tThere’s nothing to do.\n2\tRequest failed\tThe API request failed due to a processor decline\tCheck the response for the failure reason.\n3\tRequest failed\tThe API request failed due to a technical error\tCheck the response for the failure reason.\n10\tRequest initiated\tAn asynchronous process has started successfully.\tThere’s nothing to do.\n3000 codes\nResponseCode\tName\tDescription\tSolution\n3001\tInvalid entrypoint name\tEntrypoint specified in parameter doesn’t exist\tCorrect the parameter and try again.\n3002\tInvalid Amount\tAmount value is empty or negative\tProvide a valid amount.\n3003\tInvalid parameter value in request\tThe value in parameter is incorrect\tProvide the correct value for parameter.\n3004\tInvalid TimeZone value\tThe timezone value is invalid\tProvide a value between -12 and +12.\n3005\tInvalid paypoint ID\tThe paypoint ID value is invalid\tProvide a valid paypoint ID value.\n3006\tInvalid user status\tThe value provided is invalid\tProvide a valid status value for user (either 0, 1, or 85).\n3007\tThe transaction cannot be refunded\tWe can’t refund this transaction because it already has an associated chargeback or return.\tThere’s no solution for this, transactions with an associated chargeback or ACH return can’t be refunded. See Chargebacks and Returns Overview for more information.\n3012\tInvalid Amount\tAmount value is greater than available amount for action\tProvide a valid amount.\n3013\tInvalid Amount\tAmount value is different to amount in invoices\tProvide a valid amount.\n3014\tInvalid Amount\tAmount value is not as same as the authorized amount\tPlease make sure that the amount in the request matches the authorized amount\n3015\tInvalid Total Amount\tTotal Amount value is zero\tPlease make sure that the total amount in the request is greater than zero\n3016\tInvalid Total Amount\tTotal Amount value is less than the allowed value\tPlease make sure that the total amount in the request is greater than 85% of the authorized amount\n3200 codes\nResponseCode\tName\tDescription\tSolution\n3201\tEmpty scope array for user\tThe scope specified for user is empty\tProvide a valid scope for user.\n3202\tEmpty access array for user\tThe access specified for user is empty\tProvide a valid access array for user.\n3203\tEmpty email address for user\tThe email specified for user is empty\tProvide a valid email address for user.\n3204\tDuplicated email address\tA user with this email address exists already\tProvide a valid email address that isn’t used in Payabli yet.\n3205\tInvalid scope declared by requestToken\tThe scope provided is outside of the scope of the used API token in the request\tReview the scope provided in request. The platform rules don’t allow scopes not included in the parent API token.\n3206\tInvalid access declared by requestToken\tThe access provided is outside of the access authorized of the API token used in the request\tReview the access provided in request. The platform rules don’t allow access not included in the parent API token.\n3207\tInvalid email address\tThe email address is invalid\tReview the value of the email address provided in request. The email address need to follow the format specified in RFC 881.\n3208\tInvalid phone number\tThe phone number is invalid\tReview the value of the phone number provided in request. The phone number need to satisfy the regular expression &quot;^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$&quot;Examples: - +1(786)111-2222 - 234.222.1234 - 111 222 2345 - 555-444-1111\n3209\tInvalid country code\tThe country code is invalid\tReview the value of the country code provided in the request. The country code must be in ISO-3166-1-Alpha 2 format. Refer to the ISO reference for help.\n3210\tInvalid mail country code\tThe mail country code is invalid\tReview the value of the mail country code provided in the request. The country code must be in ISO-3166-1-Alpha 2 format. Refer to the ISO reference for help.\n3211\tInvalid start date\tThe start date value is invalid\tProvide the value in one of accepted formats: YYYY-MM-DD or MM",
+        "totalLength": 35900,
+        "url": "https://docs.payabli.com/developers/api-reference/api-responses",
+        "contentSource": "main (config)",
+        "usingConfig": true,
+        "content": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nGeneral codes\n3000 codes\n3200 codes\n3400 codes\n3500 codes\n3600 codes\n3700 codes\n3900 codes\n4000 codes\n5000 codes\n6000 codes\n7000 codes\n8000 codes\n9000 codes\nUsing the API\nAPI responseCode and resultCode Reference\nCopy page\nLearn about responseCode and resultCode values returned by the API\n\nWhen you make an API request, a responseCode or resultCode is returned in the response, depending on the endpoint. These codes can tell you whether the action was successful, and if not, can help you troubleshoot what went wrong with your request.\n\nThese codes don’t cover payment errors and return codes. See Payment Return Codes and Errors for codes relating to payments.\nGeneral codes\nResultCode\tName\tDescription\tSolution\n1\tRequest successful\tThe API request executed ",
+        "usedFullContent": false
+      },
+      "availableLinks": 10,
+      "decision": {
+        "reasoning": "This page is about API response codes and error handling, but doesn't contain any information about how to authenticate API requests. I need to look for authentication-related documentation.",
+        "action": "click",
+        "linkIndex": 1,
+        "confidence": "high"
+      }
+    },
+    {
+      "stepNumber": 7,
+      "page": {
+        "title": "Integration guides | Payabli",
+        "headings": [
+          "Integration guides"
+        ],
+        "contentPreview": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nIntegration guides\nTesting guide\nPay In\nPay In overview\nManage customers\nTransactions\nSubscriptions & autopays\nTokenization\nWallets\nCloud devices\nHosted payment pages\nInvoices & payment links\nRouting funds\nPay Out\nPay Out overview\nManage vendors\nPayouts\nManage bills\nPay Ops\nPay Ops overview\nBoarding\nNotifications\nReporting\nOther Pay Ops guides\nIntegration guides\nCopy page\n\nUse these developer-focused guides to build your integration with Payabli’s APIs\n\nThese integration guides are designed to help you build your integration with Payabli’s APIs. They cover the most common use cases and provide step-by-step instructions, code snippets, and best practices. Click a tile to browse related guides.\n\nPay In\n\nSee the guides for all Pay In features, also known as money in\n\nPay Out\n\nSee the guides for all Pay Out features, also known as money out\n\nPay Ops\n\nSee all the guides for managing your payment operations\n\nWas thi",
+        "fullContent": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nIntegration guides\nTesting guide\nPay In\nPay In overview\nManage customers\nTransactions\nSubscriptions & autopays\nTokenization\nWallets\nCloud devices\nHosted payment pages\nInvoices & payment links\nRouting funds\nPay Out\nPay Out overview\nManage vendors\nPayouts\nManage bills\nPay Ops\nPay Ops overview\nBoarding\nNotifications\nReporting\nOther Pay Ops guides\nIntegration guides\nCopy page\n\nUse these developer-focused guides to build your integration with Payabli’s APIs\n\nThese integration guides are designed to help you build your integration with Payabli’s APIs. They cover the most common use cases and provide step-by-step instructions, code snippets, and best practices. Click a tile to browse related guides.\n\nPay In\n\nSee the guides for all Pay In features, also known as money in\n\nPay Out\n\nSee the guides for all Pay Out features, also known as money out\n\nPay Ops\n\nSee all the guides for managing your payment operations\n\nWas this page helpful?\nYes\nNo\nBuilt with",
+        "totalLength": 1033,
+        "url": "https://docs.payabli.com/developers/developer-guides/integration-guides-home",
+        "contentSource": "main (config)",
+        "usingConfig": true,
+        "content": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nIntegration guides\nTesting guide\nPay In\nPay In overview\nManage customers\nTransactions\nSubscriptions & autopays\nTokenization\nWallets\nCloud devices\nHosted payment pages\nInvoices & payment links\nRouting funds\nPay Out\nPay Out overview\nManage vendors\nPayouts\nManage bills\nPay Ops\nPay Ops overview\nBoarding\nNotifications\nReporting\nOther Pay Ops guides\nIntegration guides\nCopy page\n\nUse these developer-focused guides to build your integration with Payabli’s APIs\n\nThese integration guides are designed to help you build your integration with Payabli’s APIs. They cover the most common use cases and provide step-by-step instructions, code snippets, and best practices. Click a tile to browse related guides.\n\nPay In\n\nSee the guides for all Pay In features, also known as money in\n\nPay Out\n\nSee the guides for all Pay Out features, also known as money out\n\nPay Ops\n\nSee all the guides for managing your payment operations\n\nWas thi",
+        "usedFullContent": false
+      },
+      "availableLinks": 16,
+      "decision": {
+        "reasoning": "This page is just an overview/index that mentions integration guides but doesn't contain any actual authentication details, code examples, or API specifics. The API reference section would logically contain authentication information.",
+        "action": "click",
+        "linkIndex": 1,
+        "confidence": "high"
+      }
+    },
+    {
+      "stepNumber": 8,
+      "page": {
+        "title": "API overview | Payabli",
+        "headings": [
+          "API overview",
+          "Authentication",
+          "Create and manage API tokens",
+          "API token types",
+          "Environments",
+          "Sandbox",
+          "Production",
+          "Rate limits",
+          "Request limits",
+          "Fraud controls",
+          "Request timeouts",
+          "Preventing duplicate requests",
+          "409 conflict",
+          "Use webhooks to avoid duplicate transactions",
+          "Entrypoint vs entry",
+          "API responseCode and resultCode Reference"
+        ],
+        "contentPreview": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nAuthentication\nCreate and manage API tokens\nAPI token types\nEnvironments\nSandbox\nProduction\nRate limits\nRequest limits\nFraud controls\nRequest timeouts\nPreventing duplicate requests\n409 conflict\nUse webhooks to avoid duplicate transactions\nEntrypoint vs entry\nUsing the API\nAPI overview\nCopy page\nGet started with the Payabli API\n\nWelcome to the Payabli API reference. Here you’ll find all the information you need for using the Payabli APIs.\n\nAuthentication\n\nThe Payabli API uses secure API tokens to authenticate requests. This guide explains how to authenticate, the different API tokens you may use, and how to create and manage basic API tokens.\n\nNote that API tokens are different than payment method tokens. API tokens are used for authentication, and paym",
+        "fullContent": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nAuthentication\nCreate and manage API tokens\nAPI token types\nEnvironments\nSandbox\nProduction\nRate limits\nRequest limits\nFraud controls\nRequest timeouts\nPreventing duplicate requests\n409 conflict\nUse webhooks to avoid duplicate transactions\nEntrypoint vs entry\nUsing the API\nAPI overview\nCopy page\nGet started with the Payabli API\n\nWelcome to the Payabli API reference. Here you’ll find all the information you need for using the Payabli APIs.\n\nAuthentication\n\nThe Payabli API uses secure API tokens to authenticate requests. This guide explains how to authenticate, the different API tokens you may use, and how to create and manage basic API tokens.\n\nNote that API tokens are different than payment method tokens. API tokens are used for authentication, and payment method tokenization exchange sensitive payment method information for secure tokens.\n\nYour API tokens carry privileges, so be sure to keep them secure! Don’t share your private API tokens in public areas such as GitHub, client-side code, or public domains.\n\nWhen you authenticate to the API, send the API token in the request header with the key requestToken.\n\nExample header\n$\t  curl --request POST \\\n>\t      --url 'https://api-sandbox.payabli.com/api/Endpoint'\\\n>\t      --header 'accept: application/json' \\\n>\t      --header 'content-type: application/*+json' \\\n>\t      --header 'requestToken: <API token>'\n\nYou must make all API requests over HTTPS. API requests without authentication will fail.\n\nCreate and manage API tokens\n\nYou can create and manage your own API tokens in PartnerHub.\n\nNavigate to Developers > API Tokens, then click Create API Token.\nIn the modal, configure your API token. See the configuration options table below.\nWhen finished, save your work.\nConfiguration option\tDescription\nToken Mode\tPublic tokens are for embedded components, including Creator components. Private tokens are for Payabli APIs and payment devices.\nToken Type\tThe organization API token type is the most commonly used, and gives partners and paypoints access to most endpoints. The application API token is more advanced, and is used for authentication and managing entities. You rarely need to use an application API token. See the API Token Types section for more information.\nToken Lifetime\tAPI tokens can have a lifetime of between 1 and 24 months. Remember that you can delete unused or compromised API tokens at any time from the dashboard.\nIP Restrictions\tUse this option to create an allowlist of IP addresses that can make requests with this API token. Leaving this option blank allows all IP addresses to make requests with this API token.\nCreator Token?\tSelect Yes to use this API token with Creator components. The API token type must be Public. Creator API tokens require that you configure domain restrictions.\nDomain Restrictions\tOnly available with Creator API tokens. For security, you must add the domains that you embed Creator components on. For example, if they’re embedded on https://app.myproduct.com, then add https://app.myproduct here.\nDescription\tA descriptive name for the API token. This description appears in the dashboard and helps identify the API token.\n\nTo view or delete API tokens, navigate to Developers > API Tokens, then click the Action column of a token you want to manage.\n\nAPI token types\n\nTo enhance security, Payabli has several different types of API token, each with different scopes and lifetime.\n\nOrganization API token (most common)\nApplication API token\nUser API token\nTemporary API token\nEnvironments\n\nPayabli offers two environments: a sandbox environment for development and a production environment to bring your Payabli integration live.\n\nSandbox\n\nUse the sandbox environment to build your payments integration without having to charge actual payments and settle bank accounts. Test and run unlimited transactions and play around with Payabli’s tools to build your application.\n\nPayabli Client Success and Development Support give you your sandbox API token after your integration kickoff call.\n\nSandbox API URL: https://api-sandbox.payabli.com/api\n\nProduction\n\nUse the production environment to go live with your integration. Transactions in this environment charge payors and create actual settlements into bank accounts. This environment also lets you create bills and send them for actual payment.\n\nMake sure you have completed extensive testing before launching. Reach out to the Payabli team to make sure you’re ready to launch.\n\nProduction API URL: https://api.payabli.com/api\n\nRate limits\n\nFor security and fraud prevention, Payabli applies two different kinds of rate limits: request limits, and transaction limits (also known as fraud controls).\n\nPayabli reserves the right to alter rate limits in case of security concerns, and wi",
+        "totalLength": 9486,
+        "url": "https://docs.payabli.com/developers/api-reference/api-overview",
+        "contentSource": "main (config)",
+        "usingConfig": true,
+        "content": "Developers\nIntegration guides\nEmbedded components\nSDKs & tools\nAPI reference\nUsing the API\nAPI overview\nAPI responses\nAPI\nPay In endpoints\nPay Out endpoints\nPay Ops endpoints\nShared resource endpoints\nWebhooks\nPay In\nPay Out\nOn this page\nAuthentication\nCreate and manage API tokens\nAPI token types\nEnvironments\nSandbox\nProduction\nRate limits\nRequest limits\nFraud controls\nRequest timeouts\nPreventing duplicate requests\n409 conflict\nUse webhooks to avoid duplicate transactions\nEntrypoint vs entry\nUsing the API\nAPI overview\nCopy page\nGet started with the Payabli API\n\nWelcome to the Payabli API reference. Here you’ll find all the information you need for using the Payabli APIs.\n\nAuthentication\n\nThe Payabli API uses secure API tokens to authenticate requests. This guide explains how to authenticate, the different API tokens you may use, and how to create and manage basic API tokens.\n\nNote that API tokens are different than payment method tokens. API tokens are used for authentication, and payment method tokenization exchange sensitive payment method information for secure tokens.\n\nYour API tokens carry privileges, so be sure to keep them secure! Don’t share your private API tokens in public areas such as GitHub, client-side code, or public domains.\n\nWhen you authenticate to the API, send the API token in the request header with the key requestToken.\n\nExample header\n$\t  curl --request POST \\\n>\t      --url 'https://api-sandbox.payabli.com/api/Endpoint'\\\n>\t      --header 'accept: application/json' \\\n>\t      --header 'content-type: application/*+json' \\\n>\t      --header 'requestToken: <API token>'\n\nYou must make all API requests over HTTPS. API requests without authentication will fail.\n\nCreate and manage API tokens\n\nYou can create and manage your own API tokens in PartnerHub.\n\nNavigate to Developers > API Tokens, then click Create API Token.\nIn the modal, configure your API token. See the configuration options table below.\nWhen finished, save your work.\nConfiguration option\tDescription\nToken Mode\tPublic tokens are for embedded components, including Creator components. Private tokens are for Payabli APIs and payment devices.\nToken Type\tThe organization API token type is the most commonly used, and gives partners and paypoints access to most endpoints. The application API token is more advanced, and is used for authentication and managing entities. You rarely need to use an application API token. See the API Token Types section for more information.\nToken Lifetime\tAPI tokens can have a lifetime of between 1 and 24 months. Remember that you can delete unused or compromised API tokens at any time from the dashboard.\nIP Restrictions\tUse this option to create an allowlist of IP addresses that can make requests with this API token. Leaving this option blank allows all IP addresses to make requests with this API token.\nCreator Token?\tSelect Yes to use this API token with Creator components. The API token type must be Public. Creator API tokens require that you configure domain restrictions.\nDomain Restrictions\tOnly available with Creator API tokens. For security, you must add the domains that you embed Creator components on. For example, if they’re embedded on https://app.myproduct.com, then add https://app.myproduct here.\nDescription\tA descriptive name for the API token. This description appears in the dashboard and helps identify the API token.\n\nTo view or delete API tokens, navigate to Developers > API Tokens, then click the Action column of a token you want to manage.\n\nAPI token types\n\nTo enhance security, Payabli has several different types of API token, each with different scopes and lifetime.\n\nOrganization API token (most common)\nApplication API token\nUser API token\nTemporary API token\nEnvironments\n\nPayabli offers two environments: a sandbox environment for development and a production environment to bring your Payabli integration live.\n\nSandbox\n\nUse the sandbox environment to build your payments integration without having to charge actua",
+        "usedFullContent": true
+      },
+      "availableLinks": 7,
+      "decision": {
+        "reasoning": "This page provides clear authentication information including how API tokens work, where to send them (in the requestToken header), and a complete curl example showing the authentication header format. This directly answers how to authenticate API requests.",
+        "action": "success",
+        "confidence": "high",
+        "contentStyleMatch": "perfect"
+      }
+    }
+  ],
+  "outcome": "success",
+  "timestamp": "2025-10-19T00:26:11.499Z",
+  "visitedUrls": [
+    "https://docs.payabli.com/developers/developer-overview",
+    "https://docs.payabli.com/developers/api-reference/api-overview",
+    "https://docs.payabli.com/developers/api-reference/api-responses",
+    "https://docs.payabli.com/developers/developer-guides/integration-guides-home",
+    "https://docs.payabli.com/developers/api-reference/api-overview",
+    "https://docs.payabli.com/developers/api-reference/api-responses",
+    "https://docs.payabli.com/developers/developer-guides/integration-guides-home",
+    "https://docs.payabli.com/developers/api-reference/api-overview"
+  ],
+  "tokenStats": {
+    "totalContentCharsSent": 13017,
+    "progressiveLoadCount": 1
+  },
+  "successFeedback": {
+    "contentStyleMatch": "perfect",
+    "foundAnswer": "This page provides clear authentication information including how API tokens work, where to send them (in the requestToken header), and a complete curl example showing the authentication header format. This directly answers how to authenticate API requests.",
+    "needsImprovement": false
+  }
+}

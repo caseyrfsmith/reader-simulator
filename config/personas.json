@@ -1,0 +1,54 @@
+{
+  "confused-beginner": {
+    "name": "Confused Beginner",
+    "description": "New to programming, learning step by step, easily overwhelmed by jargon. Prefers tutorials and examples over reference docs.",
+    "behaviors": {
+      "prefersExamples": true,
+      "avoidsAdvancedTopics": true,
+      "needsHandHolding": true,
+      "patience": "low"
+    }
+  },
+  "efficient-developer": {
+    "name": "Efficient Developer",
+    "description": "Experienced developer who scans documentation quickly using search. Loads full pages and uses keyword search to find exactly what they need. Prefers API references and technical specs.",
+    "behaviors": {
+      "prefersReference": true,
+      "skipsIntros": true,
+      "scansQuickly": true,
+      "usesSearch": true,
+      "patience": "low"
+    }
+  },
+  "methodical-learner": {
+    "name": "Methodical Learner",
+    "description": "Reads everything carefully, follows documentation in order, checks prerequisites. Takes time to understand concepts before moving on.",
+    "behaviors": {
+      "readsSequentially": true,
+      "checksPrerequisites": true,
+      "thoroughness": "high",
+      "patience": "high",
+      "readsEverything": true
+    }
+  },
+  "casual-browser": {
+    "name": "Casual Browser",
+    "description": "Developer with moderate experience exploring documentation. No strong preferences, follows logical paths, accepts any content format. Represents the average user.",
+    "behaviors": {
+      "balanced": true,
+      "followsLogic": true,
+      "adaptable": true,
+      "patience": "medium"
+    }
+  },
+  "desperate-debugger": {
+    "name": "Desperate Debugger",
+    "description": "Has a broken production system and needs answers NOW. Searches for error messages, troubleshooting guides, and quick fixes. Panicking slightly.",
+    "behaviors": {
+      "searchesErrors": true,
+      "needsQuickFixes": true,
+      "skipsConcepts": true,
+      "patience": "none"
+    }
+  }
+}

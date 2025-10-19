@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Test results and reports
+journeys/
+outputs/
+output.json
+test-results.json
+test-results/
+reports/
+*.log
+
+# Crawled data
+sitemap.json
+crawl-data/
+*.crawl.json
+
+# Playwright
+playwright-report/
+test-results/
+playwright/.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+.vscode/
+the-plan.md
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Temporary files
+tmp/
+temp/
+*.tmp

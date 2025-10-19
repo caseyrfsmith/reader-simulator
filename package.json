@@ -1,0 +1,17 @@
+{
+  "name": "reader-simulator",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "doc-tester": "./src/cli.js"
+  },
+  "scripts": {
+    "test": "node src/cli.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "commander": "^12.1.0",
+    "dotenv": "^17.0.3",
+    "playwright": "^1.48.2"
+  }
+}

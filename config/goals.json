@@ -1,0 +1,22 @@
+{
+  "authenticate": "Figure out how to authenticate API requests",
+  "first-request": "Make my first API call successfully",
+  "debug-error": "Fix a 401 Unauthorized error",
+  "webhook-setup": "Set up webhooks to receive events",
+  "rate-limits": "Understand rate limiting and how to handle it",
+  "pagination": "Learn how to paginate through large result sets",
+  "create-customer": "Create a new customer in the system",
+  "process-payment": "Process a payment or charge",
+  "handle-refund": "Issue a refund for a payment",
+  "list-transactions": "Get a list of all transactions",
+  "update-subscription": "Modify or update an existing subscription",
+  "cancel-subscription": "Cancel a customer's subscription",
+  "test-integration": "Test my integration in sandbox mode",
+  "go-live": "Move my integration from test to production",
+  "handle-errors": "Understand and handle API error responses",
+  "secure-api-keys": "Learn how to secure and manage API keys",
+  "async-processing": "Handle asynchronous payment processing",
+  "idempotency": "Implement idempotent requests to prevent duplicates",
+  "metadata": "Add custom metadata to API objects",
+  "search-objects": "Search through customers or other objects"
+}

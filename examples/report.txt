@@ -1,0 +1,36 @@
+[dotenv@17.2.3] injecting env (1) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+
+📊 Analyzing 4 journeys...
+
+📈 Success Metrics:
+   ✅ success: 3 (75%)
+   ❌ timeout: 1 (25%)
+
+📊 Efficiency:
+   Average steps: 6
+   Total tokens used: ~11323
+   Cost estimate: ~$0.0340
+
+💡 Successful BUT Could Be Better:
+   1 journey(s) found answers but content style wasn't ideal
+
+1. [docs.payabli.com] API requests are authenticated by sending the API token in the request header with the key 'requestToken'.
+   Persona: efficient-developer (2 steps)
+   Goal: Figure out how to authenticate API requests
+   Content style: acceptable
+   Gap: Needed a quick reference section with header format examples and sample curl commands instead of scattered explanatory text
+   💡 Fix: Add a dedicated 'Authentication Quick Reference' section with code examples showing exact header syntax and sample requests
+   Impact: high
+
+
+🔴 Documentation Issues Found:
+
+1. [docs.payabli.com] The user got stuck in a loop between overview pages that mentioned authentication but never showed the actual implementation details or code examples.
+   Persona: confused-beginner
+   Goal: Figure out how to authenticate API requests
+   Outcome: timeout
+   Missing: Step-by-step authentication tutorial with actual code examples showing how to include API tokens in request headers, plus copy-paste examples in different programming languages.
+   💡 Fix: Create a dedicated 'Authentication Quick Start' page with complete code examples and move it to the top of the navigation structure.
+   💥 Impact: Beginners waste time clicking through multiple pages without finding actionable information they can immediately implement in their code.
+
+

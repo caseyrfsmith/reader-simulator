@@ -1,0 +1,23 @@
+{
+  "docs.stripe.com": {
+    "name": "Stripe Documentation",
+    "contentSelector": "article#content",
+    "excludeLinks": ["dashboard.stripe.com", "stripe.com/blog"]
+  },
+
+  "docs.claude.com": {
+    "name": "docs.claude.com Documentation",
+    "contentSelector": "#content",
+    "excludeLinks": []
+  },
+  "docs.payabli.com": {
+    "name": "Payabli Docs",
+    "contentSelector": "main",
+    "excludeLinks": []
+  },
+  "_default": {
+    "name": "Unknown Site",
+    "contentSelector": null,
+    "excludeLinks": []
+  }
+}
