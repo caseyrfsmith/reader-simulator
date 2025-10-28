@@ -27,6 +27,113 @@ This is an experimental project that I dialed in using Stripe's docs and Payabli
 
 Not every persona needs to achieve every goal. As much as we'd love for every nervous beginner to be able to set up an SDK and get production-ready integration in 30 seconds, it's not realistic. Likewise, an impatient expert is not going to struggle to understand basic auth for making REST calls. This is not a complete solution, nor does it replace the need to be discerning about test results. This kind of testing still needs a content person's expertise.
 
+## TL;DR for how all this works together
+
+The next few sections give a high level overview of what each file does and how everything hangs together.
+
+### Core components
+
+#### journey.js - Main orchestrator
+
+- Manages Playwright browser automation
+- Coordinates content extraction, link selection, Claude decisions
+- Handles loop detection (stops if URL visited 3+ times)
+- Tracks token usage and progressive loading events
+- Generates journey JSON files with complete step history
+
+#### decideNextStep.js - AI decision engine
+
+- Formats prompts with page content, available links, persona behaviors
+- Sends to Claude API (Sonnet 4)
+- Parses JSON responses (with markdown code block stripping)
+- Returns: action (click/success/stuck), reasoning, confidence level
+
+#### personaBehaviors.js - Behavior logic
+
+- Defines link prioritization algorithms for each persona
+- Implements content strategies (progressive/keyword-search/full-always)
+- Defines success criteria per persona
+- Keyword extraction for targeted content
+
+#### contentExtractor.js - Smart content extraction
+
+- Site-specific selectors from `sites.json` config
+- Universal fallback using semantic HTML (article, main, etc.)
+- Finds element with most substantive text content
+- Extracts page structure (headings) to help Claude understand layout
+- Tracks content source for debugging
+
+#### linkExtractor.js - Navigation link extraction
+
+- Extracts from nav, sidebar, and main content areas
+- Filters out same-page anchors and off-site links
+- Deduplicates by URL
+- Limits to top 20 links to avoid overwhelming Claude
+
+#### feedbackGenerator.js - AI-powered insights
+
+- Uses separate Claude API calls to analyze complete journeys
+- Success feedback: evaluates content style match
+- Failure feedback: identifies documentation gaps
+- Returns structured JSON with problem, recommendation, impact
+
+#### inspector.js - Site analysis tool
+
+- Analyzes documentation sites to find best content selectors
+- Recommends configuration for `sites.json`
+- Helps users add new documentation sites quickly
+
+#### reporter.js - Aggregate analysis
+
+- Analyzes multiple journey JSON files
+- Calculates success metrics across personas and goals
+- Estimates token usage and API costs
+- Identifies patterns in failures and content style mismatches
+- Generates prioritized list of documentation issues
+
+#### cli.js - Command-line interface
+
+- `run` - Execute single test (persona + goal + URL)
+- `inspect` - Analyze docs site and suggest config
+- `report` - Generate aggregate report from journey files
+- `list-personas` / `list-goals` - Show available options
+- Built with Commander.js, includes help text and validation
+
+### Configuration files
+
+#### personas.json - User persona definitions
+
+- Name, description, and behavior flags for each persona
+- Displayed to Claude to inform decision-making
+- Separate from implementation in personaBehaviors.js
+
+#### goals.json - Common documentation tasks
+
+- Simple key-value pairs of goal ID to goal description
+- Examples: "authenticate", "first-request", "debug-error"
+- Expandable for different documentation domains
+
+#### sites.json - Site-specific configurations
+
+- Custom content selectors per documentation site
+- Domains to exclude from link extraction
+- Fallback "_default" config for unknown sites
+
+### Usage flow
+
+1. **User runs CLI command** with URL, persona, goal
+2. **Journey starts:** Browser launches, navigates to URL
+3. **Content extraction:** Page content extracted using site config or universal fallback
+4. **Persona processing:** Content filtered/modified based on persona's reading strategy
+5. **Link extraction:** Available links extracted and prioritized by persona preferences
+6. **Claude decision:** Content + links sent to Claude API for decision
+7. **Progressive loading:** If confidence low and progressive mode, load full content and re-decide
+8. **Action execution:** Click link, declare success, or stuck
+9. **Loop detection:** Check if URL visited 3+ times
+10. **Repeat** until success, stuck, or max steps reached
+11. **Feedback generation:** AI analyzes journey and generates insights
+12. **Output:** Journey JSON saved with complete history and feedback
+
 ## Prerequisites
 
 - Node.js - Version 18 or higher
