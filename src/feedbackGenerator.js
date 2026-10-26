@@ -27,7 +27,7 @@ Respond with ONLY a JSON object:
 }`;
 
     const reportResponse = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-5-5',
       max_tokens: 1000,
       messages: [{ role: 'user', content: reportPrompt }]
     });
@@ -84,7 +84,7 @@ Respond with ONLY a JSON object:
 }`;
 
     const successResponse = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-5-5',
       max_tokens: 800,
       messages: [{ role: 'user', content: successPrompt }]
     });

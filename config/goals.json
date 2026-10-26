@@ -18,5 +18,6 @@
   "async-processing": "Handle asynchronous payment processing",
   "idempotency": "Implement idempotent requests to prevent duplicates",
   "metadata": "Add custom metadata to API objects",
-  "search-objects": "Search through customers or other objects"
+  "search-objects": "Search through customers or other objects",
+  "install-cli": "Download and install the CLI"
 }

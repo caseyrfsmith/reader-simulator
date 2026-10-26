@@ -14,6 +14,7 @@ This tool uses AI (Claude via the Anthropic API) to simulate real users trying t
   - Experts simulate Ctrl+F keyword search with large context windows
   - Methodical learners always read full content
   - Debuggers search for error-related keywords
+  - AI agents skip the browser, start from `llms.txt`, and read markdown versions of pages
 - **Smart link prioritization** - Personas prioritize different types of links (tutorials vs API reference)
 - **Site configuration system** - Define custom content selectors for different documentation sites
 - **Content style evaluation** - Identifies when users find answers but the format doesn't match their learning preferences
@@ -36,6 +37,7 @@ The next few sections give a high level overview of what each file does and how 
 #### journey.js - Main orchestrator
 
 - Manages Playwright browser automation
+- Switches to plain HTTP fetching for personas in markdown mode
 - Coordinates content extraction, link selection, Claude decisions
 - Handles loop detection (stops if URL visited 3+ times)
 - Tracks token usage and progressive loading events
@@ -51,7 +53,7 @@ The next few sections give a high level overview of what each file does and how 
 #### personaBehaviors.js - Behavior logic
 
 - Defines link prioritization algorithms for each persona
-- Implements content strategies (progressive/keyword-search/full-always)
+- Implements content strategies (progressive/keyword-search/full-always/markdown)
 - Defines success criteria per persona
 - Keyword extraction for targeted content
 
@@ -69,6 +71,14 @@ The next few sections give a high level overview of what each file does and how 
 - Filters out same-page anchors and off-site links
 - Deduplicates by URL
 - Limits to top 20 links to avoid overwhelming Claude
+
+#### markdownFetcher.js - Agent-style fetching
+
+- Used by personas in markdown mode instead of the browser
+- Finds `llms.txt` at the start path, then at the site root
+- Fetches markdown versions of pages (`.md` suffix, `index.md`, `index.html.md`, or `Accept: text/markdown`)
+- Falls back to stripped HTML text when a page has no markdown, and records that as the content source
+- Extracts `[title](url): description` links from markdown, including off-site links
 
 #### feedbackGenerator.js - AI-powered insights
 
@@ -122,8 +132,8 @@ The next few sections give a high level overview of what each file does and how 
 ### Usage flow
 
 1. **User runs CLI command** with URL, persona, goal
-2. **Journey starts:** Browser launches, navigates to URL
-3. **Content extraction:** Page content extracted using site config or universal fallback
+2. **Journey starts:** Browser launches, navigates to URL (markdown-mode personas fetch `llms.txt` instead)
+3. **Content extraction:** Page content extracted using site config or universal fallback (or fetched as markdown)
 4. **Persona processing:** Content filtered/modified based on persona's reading strategy
 5. **Link extraction:** Available links extracted and prioritized by persona preferences
 6. **Claude decision:** Content + links sent to Claude API for decision
@@ -184,7 +194,7 @@ node src/cli.js list-personas
 
 ## Quick start
 
-The project comes with five personas defined in `personas.json` and `personaBehaviors.js`. You can add or edit personas as needed.
+The project comes with six personas defined in `personas.json` and `personaBehaviors.js`. You can add or edit personas as needed.
 
 ### 1. Inspect a documentation site
 
@@ -383,6 +393,12 @@ Each persona has distinct behaviors defined in `personaBehaviors.js` that affect
 - **Success criteria:** Looks for error explanations, troubleshooting steps, quick fixes
 - **Reading style:** Urgently searches for problem-specific content, includes keywords like "error", "fix", "solution"
 
+### Inhuman agent
+- **Link prioritization:** Favors `.md`/`.txt` links, `llms-full.txt`, OpenAPI specs, reference, CLI/SDK, and install pages; penalizes pricing, blog, and customer pages. Keeps the top 100 links, since `llms.txt` files can list hundreds of pages
+- **Content strategy:** Markdown mode - no browser. Starts from `llms.txt`, reads up to 12000 chars of markdown per page
+- **Success criteria:** Looks for commands or code it can run as-is, exact API endpoints and schemas, machine-readable specs, and exact configuration values
+- **Reading style:** Reads like an AI coding agent, follows any guidance in `llms.txt` (such as appending `.md` to URLs), and follows links off-site
+
 ## Output format
 
 ### Journey files
@@ -465,6 +481,23 @@ Different personas read content differently:
 - Always loads maximum content (5000 chars)
 - Reads everything thoroughly
 - No progressive loading
+
+**Markdown** (Inhuman Agent):
+- Skips Playwright and fetches pages over HTTP, like a coding agent's fetch tool
+- Starts from `llms.txt` if the site has one, otherwise from the start URL
+- For each link, tries the markdown version of the page before falling back to stripped HTML
+- The journey JSON records `llmsTxtUrl` and each step's `contentSource` (for example `.md suffix` or `html-fallback (no markdown available)`), which shows which pages agents can't read as markdown
+- Content beyond 12000 chars isn't sent to Claude, so guidance near the bottom of a long `llms.txt` can be missed. All links are still extracted and ranked. Raise `fullChars` in `personaBehaviors.js` if you need more
+
+To try it:
+
+```bash
+node src/cli.js run \
+  --url https://learning.postman.com/ \
+  --persona inhuman-agent \
+  --goal install-cli \
+  --steps 5
+```
 
 ### Navigation
 
@@ -655,6 +688,7 @@ Bad goals:
 │   ├── feedbackGenerator.js   # Success and failure feedback
 │   ├── contentExtractor.js    # Page content extraction
 │   ├── linkExtractor.js       # Navigation link extraction
+│   ├── markdownFetcher.js     # llms.txt and markdown fetching for agent personas
 │   ├── inspector.js           # Site inspection utilities
 │   ├── reporter.js            # Aggregate reporting
 │   └── logger.js              # Logging utilities

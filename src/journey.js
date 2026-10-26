@@ -6,6 +6,7 @@ import { generateFeedbackReport, generateSuccessFeedback } from './feedbackGener
 import { Logger } from './logger.js';
 import fs from 'fs/promises';
 import { getPersonaBehavior } from './personaBehaviors.js';
+import { findLlmsTxt, fetchMarkdownPage, extractMarkdownLinks } from './markdownFetcher.js';
 
 export async function runJourney({
   startUrl,
@@ -64,14 +65,30 @@ export async function runJourney({
 
   let currentStep = 0;
 
+  // Markdown-mode personas fetch over HTTP instead of driving the browser
+  const usesMarkdown = getPersonaBehavior(personaKey).contentStrategy.mode === 'markdown';
+  let markdownUrl = startUrl;
+
   try {
-    logger.log('Loading initial page...', '⏳');
-    await page.goto(startUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
-    
+    if (usesMarkdown) {
+      logger.log('Looking for llms.txt...', '⏳');
+      const llmsTxtUrl = await findLlmsTxt(startUrl);
+      journey.llmsTxtUrl = llmsTxtUrl;
+      if (llmsTxtUrl) {
+        logger.log(`Found llms.txt: ${llmsTxtUrl}`, '🤖');
+        markdownUrl = llmsTxtUrl;
+      } else {
+        logger.log('No llms.txt found, starting from the start URL', '⚠️');
+      }
+    } else {
+      logger.log('Loading initial page...', '⏳');
+      await page.goto(startUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    }
+
     while (currentStep < maxSteps) {
       logger.log(`\nStep ${currentStep + 1}/${maxSteps}`, '📍');
-      
-      const currentUrl = await page.url();
+
+      const currentUrl = usesMarkdown ? markdownUrl : await page.url();
 
       // GET PERSONA BEHAVIOR
       const behavior = getPersonaBehavior(personaKey);
@@ -86,12 +103,23 @@ export async function runJourney({
       
       journey.visitedUrls.push(currentUrl);
       
-      // Wait for content to load
-      logger.log('Waiting for page content...', '⏳');
-      await page.waitForTimeout(2000);
-      
-      // Extract page content
-      const pageInfo = await extractPageContent(page, siteConfig);
+      let pageInfo;
+      if (usesMarkdown) {
+        logger.log('Fetching markdown...', '⏳');
+        pageInfo = await fetchMarkdownPage(currentUrl, behavior.contentStrategy.fullChars);
+        if (!pageInfo) {
+          logger.log(`ERROR: Could not fetch ${currentUrl}`, '❌');
+          journey.outcome = 'content-extraction-failed';
+          break;
+        }
+      } else {
+        // Wait for content to load
+        logger.log('Waiting for page content...', '⏳');
+        await page.waitForTimeout(2000);
+
+        // Extract page content
+        pageInfo = await extractPageContent(page, siteConfig);
+      }
 
       logger.log(`On: ${pageInfo.title}`, '📄');
       logger.log(`URL: ${pageInfo.url}`, '🔗');
@@ -116,7 +144,14 @@ export async function runJourney({
 
       logger.log(`Persona: ${persona.name} (${strategy.mode} mode)`, '🎭');
 
-      if (strategy.mode === 'full-always') {
+      if (strategy.mode === 'markdown') {
+        // Agent: reads the whole markdown file, guidance and all
+        currentContent = pageInfo.fullContent;
+        usedFullContent = true;
+        logger.log(`Read markdown (${currentContent.length} chars) via ${pageInfo.contentSource}`, '🤖');
+        journey.tokenStats.totalContentCharsSent += currentContent.length;
+
+      } else if (strategy.mode === 'full-always') {
         // Methodical learner: always use maximum content
         currentContent = pageInfo.fullContent;
         usedFullContent = true;
@@ -153,10 +188,15 @@ export async function runJourney({
       logger.log(`Preview: "${preview}..."`, '👀');
 
       // Extract and filter links
-      const links = await extractLinks(page, siteConfig, currentUrl);
+      // Agents follow links anywhere, including off-site docs hosts, so skip the same-site filter
+      const links = usesMarkdown
+        ? extractMarkdownLinks(pageInfo.rawContent, currentUrl)
+        : await extractLinks(page, siteConfig, currentUrl);
       logger.log(`Found ${links.length} links`, '🔗');
 
-      const { filteredLinks, removedCount } = filterLinks(links, currentUrl);
+      const { filteredLinks, removedCount } = usesMarkdown
+        ? { filteredLinks: links, removedCount: 0 }
+        : filterLinks(links, currentUrl);
       
       if (removedCount > 0) {
         logger.log(`Filtered out ${removedCount} link(s) (same page or off-site)`, '🚫');
@@ -237,10 +277,11 @@ export async function runJourney({
 
       logger.log(`Claude (${decision.confidence}${usedFullContent ? ', full content' : ''}): ${decision.reasoning}`, '🤖');
 
+      const { rawContent, ...pageInfoForRecord } = pageInfo;
       const stepRecord = {
         stepNumber: currentStep + 1,
         page: {
-          ...pageInfo,
+          ...pageInfoForRecord,
           content: currentContent,
           usedFullContent: usedFullContent
         },
@@ -266,8 +307,15 @@ export async function runJourney({
           break;
         }
 
+        if (usesMarkdown) {
+          logger.log(`Following: ${targetLink.text}`, '👆');
+          markdownUrl = targetLink.href;
+          currentStep++;
+          continue;
+        }
+
         logger.log(`Clicking: ${targetLink.text}`, '👆');
-        
+
         try {
           logger.log('Loading next page...', '⏳');
           await page.goto(targetLink.href, { 

@@ -50,5 +50,17 @@
       "skipsConcepts": true,
       "patience": "none"
     }
+  },
+  "inhuman-agent": {
+    "name": "Inhuman Agent",
+    "description": "An AI coding agent reading docs on a developer's behalf. Never renders web pages. Starts from the site's llms.txt and follows any guidance it gives (such as appending .md to page URLs or using llms-full.txt), then reads the markdown versions of pages. Wants exact commands, code, and API details it can act on without guessing.",
+    "behaviors": {
+      "readsLlmsTxt": true,
+      "followsAgentGuidance": true,
+      "prefersMarkdown": true,
+      "ignoresVisualLayout": true,
+      "needsExactValues": true,
+      "patience": "high"
+    }
   }
 }

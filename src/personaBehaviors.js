@@ -292,6 +292,60 @@ export const personaBehaviors = {
       
       return targeted || fullContent;
     }
+  },
+
+  // Reads like a coding agent: starts at llms.txt, fetches .md versions of pages over HTTP, never renders HTML.
+  // Fetching and link extraction live in markdownFetcher.js; journey.js switches to them for 'markdown' mode.
+  'inhuman-agent': {
+    selectLink(links, goal) {
+      const goalKeywords = extractKeywords(goal);
+
+      const scored = links.map(link => {
+        const text = link.text.toLowerCase();
+        const href = link.href.toLowerCase();
+        let score = 0;
+
+        // Agents prefer machine-readable sources
+        if (href.endsWith('.md') || href.endsWith('.txt')) score += 20;
+        if (href.includes('llms-full.txt')) score += 15;
+        if (text.includes('openapi') || href.includes('openapi')) score += 25;
+        if (text.includes('reference')) score += 20;
+        if (text.includes('cli') || text.includes('sdk')) score += 15;
+        if (text.includes('quickstart') || text.includes('install')) score += 15;
+
+        // Goal keywords in the title, description, or URL path
+        goalKeywords.forEach(keyword => {
+          if (text.includes(keyword)) score += 35;
+          if (href.includes(keyword)) score += 20;
+        });
+
+        // Marketing pages aren't useful to an agent
+        if (text.includes('pricing') || text.includes('blog') || text.includes('customer')) score -= 30;
+
+        return { ...link, score };
+      });
+
+      // llms.txt files can list hundreds of pages; an agent's context only takes so many
+      return scored.sort((a, b) => b.score - a.score).slice(0, 100);
+    },
+
+    contentStrategy: {
+      mode: 'markdown',
+      initialChars: 12000,
+      fullChars: 12000,
+      loadFullOn: []
+    },
+
+    successCriteria: [
+      "Exact shell commands or code that can be executed as-is",
+      "API endpoint, method, and request/response schema",
+      "Link to a machine-readable spec (OpenAPI, JSON schema)",
+      "Installation or configuration steps with exact values"
+    ],
+
+    async extractTargetedContent(page, goal, fullContent) {
+      return fullContent;
+    }
   }
 };
 

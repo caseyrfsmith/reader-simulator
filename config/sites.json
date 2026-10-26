@@ -15,6 +15,13 @@
     "contentSelector": "main",
     "excludeLinks": []
   },
+  {
+  "learning.postman.com": {
+    "name": "learning.postman.com Documentation",
+    "contentSelector": "main",
+    "excludeLinks": []
+  }
+},
   "_default": {
     "name": "Unknown Site",
     "contentSelector": null,
